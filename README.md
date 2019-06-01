@@ -1,2 +1,1 @@
-# springcloud_consul_demo
-springcloud2.x使用consul作为注册中心实现服务调用的一个小Demo
+# springcloud2.x使用consul作为注册中心实现服务调用的一个小Demo
