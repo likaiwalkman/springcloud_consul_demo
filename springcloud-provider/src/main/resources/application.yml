@@ -1,0 +1,46 @@
+# web容器配置
+server:
+  port: 8001
+  servlet:
+    context-path: /
+
+# mybatis配置
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml  # 指定mybatis全局配置文件
+  type-aliases-package: com.xp.springcloud.pojo       # 为指定的包下的所有的实体类别名
+  mapper-locations:                                   # 指定mapper映射文件地址,值为空表示全局扫描
+
+# spring配置
+spring:
+  application:
+    name: springcloud-provider
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource       # 数据源
+    driver-class-name: com.mysql.jdbc.Driver           # 驱动
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8              # 数据库名称
+    username: root
+    password: 123456
+    dbcp2:
+      min-idle: 5                                       # 最小链接数
+      initial-size: 5                                   # 初始化连接数
+      max-total: 5                                      # 最大连接数
+      max-wait-millis: 200                              # 等待链接获取的最大超时时间
+  cloud:
+    consul:
+      host: 192.168.1.121                               # consul server 地址
+      port: 8500                                        # consul server端口
+      discovery:
+        register: true                                   # 注册当前服务到consul server
+        serviceName: ${spring.application.name}          # 注册到consul server中的当前服务的名称
+        heartbeat:
+          enabled: true                                  # 心跳检查
+        healthCheckPath: ${management.context-path}/health                # 健康监控地址
+        healthCheckInterval: 15s                         # Consul 健康检查频率,也就是心跳频率
+        instance-id: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}} # spring.cloud.consul.discovery.instanceId配置 Consul 注册服务 ID
+
+# 端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

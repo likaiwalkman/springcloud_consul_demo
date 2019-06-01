@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xp.springcloud.mapper.UserMapper">
+
+    <!--添加-->
+    <insert id="insertUser" parameterType="User">
+        insert into users(user_name,email,phone,gender,age,user_desc)
+        values (#{userName},#{email},#{phone},#{gender},#{age},#{userDesc})
+    </insert>
+
+    <!--根据用户名查询-->
+    <select id="getUserByName" parameterType="string" resultType="User">
+        select user_name,email,phone,gender,age,user_desc from users
+        where user_name=#{userName}
+    </select>
+
+    <!--查询全部-->
+    <select id="getUsers" resultType="User">
+         select user_name,email,phone,gender,age,user_desc from users
+    </select>
+</mapper>
