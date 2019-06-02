@@ -5,7 +5,7 @@ springcloud2.x使用consul作为注册中心,在服务消费方使用feign实现
 
 如图:
 
-##### ![](F:\intellij-projects\springcloud\springcloud-parent\img\consul原理.png)
+##### ![](img/consul原理.png)
 
 ##### 流程说明:
 
