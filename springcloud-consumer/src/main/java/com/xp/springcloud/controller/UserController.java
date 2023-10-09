@@ -48,7 +48,7 @@ public class UserController {
 
         try {
 
-            result =userClientService.getUsers();
+            result = userClientService.getUsers();
 
         } catch (Exception ex){
             ex.printStackTrace();

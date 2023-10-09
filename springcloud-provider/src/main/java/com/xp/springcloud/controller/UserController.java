@@ -25,10 +25,10 @@ public class UserController {
         Map<String,Object> result= new HashMap<String, Object>();
 
         try {
-            List<User> users = iUserService.getUsers();
+            //List<User> users = iUserService.getUsers();
 
             //返回结果
-            result.put("datas",users);
+            //result.put("datas",users);
             result.put("status","200");
             result.put("msg","查询成功!");
         }catch (Exception ex){
