@@ -28,7 +28,7 @@ public class UserController {
     //服务提供者地址
     private static final String REST_URL_PREFIX = "http://localhost:8001/provider";
 
-    @GetMapping(value = "/user/getUsers")
+    @GetMapping(value = "/user/getUsersViaHttp")
     public Map<String,Object> getUsers(){
         Map<String,Object> result=new HashMap<String, Object>();
 
@@ -42,7 +42,7 @@ public class UserController {
     }
 
 
-    @GetMapping(value = "/user/getUsers2")
+    @GetMapping(value = "/user/getUsersViaRpc")
     public Map<String,Object> getUsers2(){
         Map<String,Object> result=new HashMap<String, Object>();
 

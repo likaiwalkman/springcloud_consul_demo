@@ -21,3 +21,10 @@ springcloud2.x使用consul作为注册中心,在服务消费方使用feign实现
   # 
   
 ```
+
+```shell
+#testing curl:
+curl http://127.0.0.1:8002/consumer/user/getUsersViaRpc 
+curl http://127.0.0.1:8002/consumer/user/getUsersViaHttp 
+curl http://127.0.0.1:8001/provider/user/getUsers
+```
