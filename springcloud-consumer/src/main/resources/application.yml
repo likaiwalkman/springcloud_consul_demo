@@ -3,6 +3,11 @@ server:
   servlet:
     context-path: /
 
+ribbon:
+  eager-load:
+    enabled: true
+    clients: springcloud-provider
+
 spring:
   application:
     name: springcloud-consumer
