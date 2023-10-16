@@ -28,3 +28,7 @@ curl http://127.0.0.1:8002/consumer/user/getUsersViaRpc
 curl http://127.0.0.1:8002/consumer/user/getUsersViaHttp 
 curl http://127.0.0.1:8001/provider/user/getUsers
 ```
+
+
+test: auto config introduction
+https://docs.spring.io/spring-boot/docs/current/reference/html/test-auto-configuration.html
